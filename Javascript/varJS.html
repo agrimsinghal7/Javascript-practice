@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Javascript </title>
 </head>
 <body>
+        <img src="https://m.media-amazon.com/images/I/51YrcSFYDRL.jpg" alt="krishna ji  image" width="500px" height="400px">
     <script>
         //JS variable data type values 
 
@@ -85,6 +86,10 @@
            
         console.log(myInfo.address.length); //find length of string value of address key
         console.log(myInfo.name.toUpperCase()); //to convert string value of name key to uppercase
+
+        console.log(Object.values(myInfo));            //here object is treat as a array and all the values of object are stored in array and then printed on console
+        
+        console.log("object keys length: ", Object.keys(myInfo).length)
          
 
         //array [] - values are defined in ordered list and separated by comma(,) and the whole array is enclosed in square brackets([])
@@ -98,6 +103,20 @@
              console.log(myarray[2].toUpperCase()); 
              console.log(myarray[4].length); 
              console.log(myarray.length); //to access the second value of array
+
+
+        //function - block of code that performs a specific task and can be reused multiple times  
+        //function 0 block of code i.e perform particular any task 
+
+        function myFunc(){
+            let num1=10;
+            let num2=20;
+             let sum=num1+num2;
+             console.log("the sum of "+num1+" and "+num2+" is "+sum);
+            
+        }
+        myFunc(); //to call the function and execute the code inside the function
+
 
     </script>
 </body>
