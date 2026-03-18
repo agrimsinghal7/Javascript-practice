@@ -51,6 +51,74 @@
                 add1(90);
                 multiply(24);
                 divide(13);
+
+                //anonymous function: a function without a name, often used as a callback or assigned to a variable.
+
+                 /*  let demo1=function(){
+  console.log("hello ABES");
+  }
+  demo1(); */
+  //shortes way to write above function i.e. arrow function
+ /*  let demo1=()=>{
+     console.log("Hello JS");
+  }
+  demo1(); */
+  // above function in signle line
+  let demo1=()=>console.log("Hello Java Script");
+  demo1();
+
+  //An Immediately Invoked Function Expression (IIFE) in JavaScript runs as soon as it is defined. The primary syntax involves wrapping the function in parentheses to treat it as an expression, followed by another pair of parentheses to call it immediately.
+
+  (function(){
+    console.log("IIFE in JS");
+  })();
+//Call Back Function:- 
+//A callback function in JavaScript is a function passed as an argument to another function, which is then executed inside the outer function at a later time or upon a specific event. This is a key mechanism for handling both synchronous and asynchronous operations.
+
+//callback in synchronous
+/* function addRes(callback){
+    var num1=5;
+    var num2=10;
+    var res=num1+num2;
+    callback(res)
+}
+function result(res){
+    console.log("Addiontion of two number is " + res);
+}
+addRes(result); */
+//callback in asynchronous using setTimeout API
+
+/* function hello(){
+    console.log("Hello JS");
+}
+
+function process(){
+    console.log("processing");
+}
+setTimeout(hello, 5000);
+process(); */
+
+//another example using call back
+
+function display(callback){
+    console.log("Display data from server");
+
+setTimeout(function(){
+    let data={
+        name:"Vikas",
+        age:23,
+        isMarried:null
+    };
+
+callback(data)
+},2000);
+};
+function displayUser(user){
+    console.log(`${user.name} age is ${user.age} and ${user.isMarried}`);
+}
+display(displayUser);
+
+
  </script>
 </body>
 </html>
