@@ -110,7 +110,7 @@ setTimeout(function(){
         isMarried:null
     };
 
-callback(data)
+callback(data);
 },2000);
 };
 function displayUser(user){
@@ -118,7 +118,40 @@ function displayUser(user){
 }
 display(displayUser);
 
+//a promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It allows you to handle asynchronous operations in a more manageable way, avoiding callback hell and providing a cleaner syntax for handling asynchronous code.
+//pending: The initial state of a promise, indicating that the asynchronous operation is still in progress and has not yet completed or failed.
+//fulfilled: The state of a promise when the asynchronous operation has completed successfully, and the promise has a resulting value. In this state, the promise is considered "resolved" and can be handled with the .then() method.
+//rejected: The state of a promise when the asynchronous operation has failed, and the promise
 
+let mypromise=new Promise(function(resolve,reject){
+    let age=25;
+    if(age>=18){
+        resolve("You are eligible for voting");
+    }
+    else{
+        reject("wait for next year");
+    }                                                       
+});
+mypromise.then(result=>console.log(result))
+        .catch(error=>console.log(error))
+        .finally(()=>console.log("This will always execute"));
+
+        //async await: Async/await is a syntax in JavaScript that allows you to write asynchronous code in a more synchronous and readable manner. It is built on top of promises and provides a way to handle asynchronous operations without the need for chaining .then() and .catch() methods.
+       //async and await are special keywords in JavaScript that work together to handle asynchronous operations in a more readable and synchronous-like manner. The async keyword is used to declare a function as asynchronous, while the await keyword is used to pause the execution of the async function until a promise is resolved or rejected.
+
+
+
+       async function userdata() {
+  try {
+    let response = await fetch("https://dummyjson.com/products");
+    let responsedata = await response.json();
+    console.log(responsedata);
+  } catch (error) {
+    console.log("Error fetching user data: " + error);
+  }
+}
+
+userdata(); // ← THIS WAS MISSING
  </script>
 </body>
 </html>
